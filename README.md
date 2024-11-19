@@ -1,1 +1,3 @@
-# booking-system-project
+```
+deno task start
+```
