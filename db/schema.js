@@ -17,7 +17,7 @@ export const rolesEnum = pgEnum('role', ['reserver', 'admin'])
 export const users = pgTable(
   'users',
   {
-    id: serial().primaryKey(),
+    id: integer().primaryKey().generatedAlwaysAsIdentity(),
     username: varchar().notNull(),
     password: varchar().notNull(),
     email: varchar().notNull().unique(),
@@ -36,7 +36,7 @@ export const usersRelations = relations(users, ({ many }) => ({
 }))
 
 export const resources = pgTable('resources', {
-  id: serial().primaryKey(),
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
   name: varchar().notNull(),
   description: text(),
   hourlyRate: numeric({ precision: 4, scale: 2 }).notNull(),
@@ -52,7 +52,7 @@ export const resourcesRelations = relations(resources, ({ many }) => ({
 export const reservations = pgTable(
   'reservations',
   {
-    id: serial().primaryKey(),
+    id: integer().primaryKey().generatedAlwaysAsIdentity(),
     userId: integer()
       .notNull()
       .references(() => users.id),

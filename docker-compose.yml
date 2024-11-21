@@ -1,0 +1,39 @@
+version: '3.8'
+networks:
+  dev:
+    driver: bridge
+services:
+  db:
+    image: 'postgres:latest'
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dev
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
+  api:
+    image: denoland/deno:latest
+    container_name: api_service
+    ports:
+      - '2000:8000'
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      - PORT=8080
+    networks:
+      - dev
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
+volumes:
+  pgdata:
