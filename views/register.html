@@ -9,7 +9,7 @@
     <link
       rel="stylesheet"
       href="/static/styles.css" />
-    <!-- Link to external CSS -->
+
   </head>
 
   <body>
@@ -18,13 +18,22 @@
       <form
         action="/register"
         method="POST">
-        <label for="username">Email:</label>
+        <label for="email">Email:</label>
         <input
           type="email"
-          id="username"
-          name="username"
+          id="email"
+          name="email"
           placeholder="Enter your email"
           required />
+
+        <label for="username">username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required />
+
         <label for="password">Password:</label>
         <input
           type="password"
@@ -32,11 +41,11 @@
           name="password"
           placeholder="Create a password"
           required />
-        <label for="birthdate">Birthdate:</label>
+        <label for="age">age:</label>
         <input
-          type="date"
-          id="birthdate"
-          name="birthdate"
+          type="number"
+          id="age"
+          name="age"
           required />
         <label for="role">Role:</label>
         <select
