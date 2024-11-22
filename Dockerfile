@@ -5,14 +5,15 @@ FROM denoland/deno:latest
 WORKDIR /app
 
 # Копіюємо залежності (наприклад, файли імпорту) та перевіряємо їх
-COPY main.js .
+COPY . .
+
 RUN deno cache main.js
 
-# Копіюємо весь код проекту в контейнер
-COPY . .
+RUN deno task db:generate && echo "db:generate succeeded"
+RUN deno task db:migrate && echo "db:migrate succeeded"
 
 # Відкриваємо порт (якщо API запускається, наприклад, на 8000 порту)
 EXPOSE 8000
 
 # Команда для запуску проекту
-CMD ["run", "--allow-net", "--allow-env", "--allow-read", "--allow-write", "main.js"]
+CMD ["task", "start:prod"]
