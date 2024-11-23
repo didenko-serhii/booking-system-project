@@ -1,6 +1,6 @@
 import client from '../db/db.js'
 import * as bcrypt from 'https://deno.land/x/bcrypt/mod.ts'
-import { z } from 'https://deno.land/x/zod@v3.23.8/mod.ts' // Import Zod
+import { z } from 'https://deno.land/x/zod@v3.23.8/mod.ts' 
 
 const registerSchema = z.object({
   email: z
