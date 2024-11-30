@@ -31,6 +31,14 @@ CREATE TABLE IF NOT EXISTS users (
     CHECK (age > 12)
 );
 
+create table if not exists login_logs (
+  id int primary key generated always as identity,
+  logged_at timestamptz not null default now(),
+  ip varchar(255) not null,
+  user_id int not null,
+  foreign key (user_id) references users (id) on delete cascade
+); 
+
 CREATE OR REPLACE FUNCTION check_age() RETURNS TRIGGER AS $$
 BEGIN
     IF ((SELECT age FROM users u WHERE u.id = NEW.user_id) < 15) THEN
