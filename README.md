@@ -23,3 +23,19 @@ deno task start
 | Date      | Used hours | Subject(s) | output |
 | --------- | ---------- | ---------- | ------ |
 | 7.12.2024 | 1          |            |        |
+
+## Phase 4
+
+| Date      | Used hours | Subject(s)                                                | output                                                                           |
+| --------- | ---------- | --------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| 7.12.2024 | 1          | Add the Privacy Policy,the terms of service, account page | I learned to implement authentication and manage legal policy pages effectively. |
+
+### Answer to Questions
+
+#### 1. Our system does not use consent (except for accepting the terms of service, but this is a slightly different matter). Is this good? Explain (100 words)
+
+Not using consent extensively can simplify the user experience, especially in a system designed for specific functionalities like booking resources. However, this approach has drawbacks. Lack of explicit consent for data usage can lead to user distrust and potential legal issues, particularly in jurisdictions with stringent data protection laws (e.g., GDPR). Consent ensures users are aware of how their data is used, promoting transparency and accountability. While our system operates within a limited scope, adding consent mechanisms for actions like data collection, analytics, or email communications would align with best practices and foster user trust.
+
+#### 2. Choose an example page where consent is required. Tell us which one you chose. Tell us why consent is required? (100 words)
+
+I chose the "newsletter subscription" page as an example. Consent is required because subscribing to a newsletter involves collecting and processing a user's email address for sending periodic updates or promotional content. Under data protection regulations like GDPR, this constitutes personal data processing, which requires explicit user consent. Users must willingly opt-in to receive communications, and the system must ensure they understand how their data will be used, stored, and their rights to withdraw consent. This prevents unsolicited communication and aligns with legal and ethical standards for data handling.
