@@ -24,6 +24,63 @@ deno task start
 | --------- | ---------- | ---------- | ------ |
 | 7.12.2024 | 1          |            |        |
 
+**I didn't see any new alerts in my program, so I decided to look for what could be wrong and what could be improved**
+
+## 1. **SQL Injection Risk in Queries**
+
+- **What is wrong?**  
+  Raw SQL queries are used without parameterized inputs in multiple places, such as in `getUserUUID`, `getResources`, and `registerReservation`. This makes the system vulnerable to SQL injection attacks.
+- **How did you find it?**  
+  By reviewing the code, I identified direct concatenation of SQL statements without using prepared statements or parameterized queries.
+- **How should it work/What should be fixed?**  
+  Replace raw SQL queries with parameterized queries or prepared statements to sanitize user input and prevent SQL injection.
+
+---
+
+## 2. **Authorization Issues for Resource and Reservation Management**
+
+- **What is wrong?**  
+  The `handleReservationForm` and `getResources` endpoints lack robust role-based access control. Any logged-in user can access administrative functionalities, such as managing resources.
+- **How did you find it?**  
+  By reviewing the access logic in the endpoints and confirming that session roles are not consistently validated.
+- **How should it work/What should be fixed?**  
+  Implement strict role-based access control, ensuring that only administrators can access sensitive endpoints like `registerResource`.
+
+---
+
+## 3. **Sensitive Information Exposure**
+
+- **What is wrong?**  
+  The `getReservationsWithUser` function exposes reserver usernames in the table, which can be seen by any authenticated user. This leaks sensitive information unnecessarily.
+- **How did you find it?**  
+  By reviewing the HTML output generated for logged-in users on the index page.
+- **How should it work/What should be fixed?**  
+  Remove reserver usernames from the public table or restrict this information to administrators only.
+
+---
+
+## 4. **Validation Gaps in Input Data**
+
+- **What is wrong?**  
+  While schemas are used for validation, some fields such as `reservation_start` and `reservation_end` in `registerReservation` are not validated against realistic constraints (e.g., ensuring the start date is before the end date).
+- **How did you find it?**  
+  By reviewing the input validation logic in `registerReservation`.
+- **How should it work/What should be fixed?**  
+  Add custom validation to ensure that reservation dates are logical and within acceptable ranges.
+
+---
+
+## 5. **Insecure Error Messages**
+
+- **What is wrong?**  
+  Detailed error messages such as "Validation Error: Invalid email address" or "Invalid email or password" are returned to the user, potentially leaking information about system behavior.
+- **How did you find it?**  
+  By inspecting the `loginUser` and `registerUser` error handling logic.
+- **How should it work/What should be fixed?**  
+  Replace detailed error messages with generic responses like "Invalid credentials" or "An error occurred." Log detailed errors server-side instead.
+
+---
+
 ## Phase 4
 
 | Date      | Used hours | Subject(s)                                                | output                                                                           |
