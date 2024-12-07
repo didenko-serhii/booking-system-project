@@ -22,7 +22,7 @@ deno task start
 
 | Date      | Used hours | Subject(s) | output |
 | --------- | ---------- | ---------- | ------ |
-| 7.12.2024 | 1          |            |        |
+| 7.12.2024 | 1          |independent search for vulnerabilities  |In my opinion, searching for vulnerabilities on your own is a good idea for learning something on your own, because when you look for them, you can find ways to solve them        |
 
 **I didn't see any new alerts in my program, so I decided to look for what could be wrong and what could be improved**
 
