@@ -13,7 +13,13 @@ deno task start
 
 ## Phase 2
 
-| Date      | Used hours | Subject(s)                                                             | output                                                                                                          |
-| --------- | ---------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 6.12.2024 | 2          | Implement the login page, logging feature, GDPR pseudonyms, index page | I gained knowledge about gdpr and how to implement it, and also understood how to develop projects with routing |
-| 7.12.2024 | 1          | functionality test and vulnerability test                              | [report](https://github.com/didenko-serhii/booking-system-project/blob/main/tests/Phase%202/2024-12-07-ZAP-Report-.md) I did only one test because I had only one alert from the previous tests and I was not able to fix it|
+| Date      | Used hours | Subject(s)                                                             | output                                                                                                                                                                                                                       |
+| --------- | ---------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 6.12.2024 | 2          | Implement the login page, logging feature, GDPR pseudonyms, index page | I gained knowledge about gdpr and how to implement it, and also understood how to develop projects with routing                                                                                                              |
+| 7.12.2024 | 1          | functionality test and vulnerability test                              | [report](https://github.com/didenko-serhii/booking-system-project/blob/main/tests/Phase%202/2024-12-07-ZAP-Report-.md) I did only one test because I had only one alert from the previous tests and I was not able to fix it |
+
+## Phase 3
+
+| Date      | Used hours | Subject(s) | output |
+| --------- | ---------- | ---------- | ------ |
+| 7.12.2024 | 1          |            |        |
