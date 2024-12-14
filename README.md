@@ -20,9 +20,9 @@ deno task start
 
 ## Phase 3
 
-| Date      | Used hours | Subject(s) | output |
-| --------- | ---------- | ---------- | ------ |
-| 7.12.2024 | 1          |independent search for vulnerabilities  |In my opinion, searching for vulnerabilities on your own is a good idea for learning something on your own, because when you look for them, you can find ways to solve them        |
+| Date      | Used hours | Subject(s)                             | output                                                                                                                                                                      |
+| --------- | ---------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 7.12.2024 | 1          | independent search for vulnerabilities | In my opinion, searching for vulnerabilities on your own is a good idea for learning something on your own, because when you look for them, you can find ways to solve them |
 
 **I didn't see any new alerts in my program, so I decided to look for what could be wrong and what could be improved**
 
@@ -83,9 +83,10 @@ deno task start
 
 ## Phase 4
 
-| Date      | Used hours | Subject(s)                                                | output                                                                           |
-| --------- | ---------- | --------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| 7.12.2024 | 1          | Add the Privacy Policy,the terms of service, account page | I learned to implement authentication and manage legal policy pages effectively. |
+| Date       | Used hours | Subject(s)                                                | output                                                                           |
+| ---------- | ---------- | --------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| 7.12.2024  | 1          | Add the Privacy Policy,the terms of service, account page | I learned to implement authentication and manage legal policy pages effectively. |
+| 14.12.2024 | 0.10       | add privacy link to term page                             |
 
 ### Answer to Questions
 
