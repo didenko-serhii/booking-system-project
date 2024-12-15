@@ -134,7 +134,7 @@ async function handler(req) {
 	}
 
 	if (url.pathname === "/privacynotice" && req.method === "GET") {
-		return serveStaticFile("./views/privacynotice.html", "text/html");
+		return serveStaticFile("./views/privacyNotice.html", "text/html");
 	}
 
 	if (url.pathname === "/account" && req.method === "GET") {
